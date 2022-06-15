@@ -49,6 +49,7 @@ Table of Contents
   --global-width: 1200px;
   --global-padding: 0;
   --spots-grid-columns: 4;
+  --article-cards-grid-columns: 3;
 }
 
 * {
@@ -266,7 +267,7 @@ body.logged-in.admin-bar #header {
 }
 .article-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--article-cards-grid-columns), 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 50px;
@@ -441,6 +442,7 @@ section.discover .content {
 @media screen and (max-width: 780px) {
   :root {
     --spots-grid-columns: 1;
+    --article-cards-grid-columns: 1;
   }
   .hero-content h1 {
     font-size: 40px;
@@ -448,5 +450,8 @@ section.discover .content {
   }
   .hero-content p {
     font-size: 20px;
+  }
+  .article-cards {
+    gap: 50px;
   }
 }
