@@ -454,4 +454,19 @@ section.discover .content {
   .article-cards {
     gap: 50px;
   }
+  .gf {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .gf .logo {
+    width: auto;
+  }
+  .gf-list {
+    margin: 25px 0;
+  }
+  .gf-item {
+    width: auto;
+    margin: 0 20px;
+  }
 }
