@@ -16,7 +16,7 @@
             <figure class="spot-img" style="background-image: url(' . get_field('image') . ')"></figure>
             <h3 class="spot-title title">' . $post->post_title . '</h3>
             <p class="spot-copy">'. get_field('excerpt') .'</p>
-            <a href="#" class="spot-btn btn">
+            <a href="#" target="_blank" class="spot-btn btn">
               <div class="spot-price">
                 <span>FROM</span>
                 <span>$'. get_field('price') .'</span>
