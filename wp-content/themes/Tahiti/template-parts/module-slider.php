@@ -17,7 +17,7 @@
     ?>
   </div>
   <div class="overlay"></div>
-  <div class="hero-content content">
+  <div class="hero-content content global-width">
     <h1 class="title"><b>Welcome </b>to Tahiti</h1>
     <p>Your vacation starts here</p>
   </div>

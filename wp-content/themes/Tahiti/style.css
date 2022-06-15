@@ -29,15 +29,15 @@ Table of Contents
 
 @font-face {
   font-family: gothamBold;
-  src: url('./assets/fonts/Gotham-Bold.otf');
+  src: url("./assets/fonts/Gotham-Bold.otf");
 }
 @font-face {
   font-family: gothamLight;
-  src: url('./assets/fonts/Gotham-Light.otf');
+  src: url("./assets/fonts/Gotham-Light.otf");
 }
 @font-face {
   font-family: gothamBook;
-  src: url('./assets/fonts/Gotham-Book.otf');
+  src: url("./assets/fonts/Gotham-Book.otf");
 }
 
 :root {
@@ -48,6 +48,7 @@ Table of Contents
   --global-yellow: #fbfbed;
   --global-width: 1200px;
   --global-padding: 0;
+  --spots-grid-columns: 4;
 }
 
 * {
@@ -57,7 +58,7 @@ body {
   margin: 0;
   padding: 0;
   -moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
 }
 a,
@@ -85,6 +86,8 @@ figure {
   max-width: var(--global-width);
   width: 100%;
   margin: 0 auto;
+  padding: var(--global-padding);
+  position: relative;
 }
 .title {
   font-size: 40px;
@@ -132,7 +135,71 @@ body.logged-in.admin-bar #header {
   text-decoration: none;
   font-size: 18px;
 }
-
+/* ** Hamburger ** */
+.gn-hamburger_container {
+  display: none;
+  width: 70px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.gn-hamburger,
+.gn-hamburger::before,
+.gn-hamburger::after {
+  width: 50px;
+  height: 3px;
+  background-color: var(--global-red);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.gn-hamburger {
+  position: relative;
+}
+.gn-hamburger::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-10px);
+}
+.gn-hamburger::after {
+  content: "";
+  position: absolute;
+  transform: translateY(10px);
+}
+.navbar-overlay {
+  cursor: pointer;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+}
+.nav-visible .gn-hamburger {
+  background: transparent;
+}
+.nav-visible .gn-hamburger::after {
+  transform: rotate(45deg);
+}
+.nav-visible .gn-hamburger::before {
+  transform: rotate(135deg);
+}
+#nav-open-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+.nav-visible #nav-open-overlay {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 /* Main */
 /* Hero */
 #main {
@@ -182,10 +249,10 @@ body.logged-in.admin-bar #header {
 .hero-content p {
   font-size: 32px;
 }
-.slick-list, .slick-track {
+.slick-list,
+.slick-track {
   height: 100%;
 }
-
 
 /* Why Tahiti */
 .about {
@@ -248,7 +315,7 @@ section.discover .content {
 }
 .discover .spots {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--spots-grid-columns), 1fr);
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -329,4 +396,56 @@ section.discover .content {
   text-transform: uppercase;
   color: var(--global-red);
   font-family: gothamBold, Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --global-padding: 0 20px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  :root {
+    --spots-grid-columns: 2;
+  }
+  .gn-hamburger_container {
+    display: flex;
+  }
+  .menu-main-menu-container {
+    position: fixed;
+    transform: translateX(100%);
+    height: 100vh;
+    background: var(--global-white);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.4s ease-in-out;
+    padding-right: 30px;
+    width: 100%;
+    max-width: 320px;
+  }
+  .nav-visible .menu-main-menu-container {
+    transform: translateX(0);
+  }
+  .gn-list {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+  }
+  .gn-item {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 780px) {
+  :root {
+    --spots-grid-columns: 1;
+  }
+  .hero-content h1 {
+    font-size: 40px;
+    margin: 30px 0;
+  }
+  .hero-content p {
+    font-size: 20px;
+  }
 }

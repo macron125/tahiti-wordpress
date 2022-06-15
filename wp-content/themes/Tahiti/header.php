@@ -9,6 +9,7 @@
   </head>
   
   <body <?php body_class(); ?>>
+    <div id="nav-open-overlay"></div>
     <header id="header" class="header">
       <nav class="gn global-width">
         <a href="<?php echo esc_url( get_home_url() ); ?>">
@@ -28,6 +29,9 @@
             ]
           );
           
-          ?>
+        ?>
+        <div class="gn-hamburger_container" id="menuBtn">
+          <div class="gn-hamburger"></div>
+        </div>
       </nav>
     </header>
