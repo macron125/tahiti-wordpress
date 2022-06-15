@@ -2,6 +2,7 @@
 
 add_theme_support('title-tag');
 add_theme_support( 'custom-logo', [] );
+add_theme_support( 'post-thumbnails' );
 
 /**
  * Remove Gutenberg Block Library CSS from loading on the frontend
@@ -89,3 +90,8 @@ function th_nav_add_anchor_classes($atts, $item, $args) {
   return $atts;
 }
 add_filter('nav_menu_link_attributes', 'th_nav_add_anchor_classes', 1, 3);
+
+/**
+ * Custom Post Types
+ */
+require get_template_directory() . "/core/custom-post-types.php";

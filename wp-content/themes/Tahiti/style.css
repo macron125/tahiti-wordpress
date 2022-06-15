@@ -4,7 +4,7 @@
  Description:  Tahiti theme
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.1
+ Version:      1.0.3
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  tahiti
@@ -29,15 +29,15 @@ Table of Contents
 
 @font-face {
   font-family: gothamBold;
-  src: url('./fonts/GothamBold.ttf');
+  src: url('./assets/fonts/Gotham-Bold.otf');
 }
 @font-face {
   font-family: gothamLight;
-  src: url('./fonts/GothamLight.ttf');
+  src: url('./assets/fonts/Gotham-Light.otf');
 }
 @font-face {
   font-family: gothamBook;
-  src: url('./fonts/GothamBook.ttf');
+  src: url('./assets/fonts/Gotham-Book.otf');
 }
 
 :root {
@@ -258,6 +258,7 @@ section.discover .content {
 .discover .spot-card {
   list-style-type: none;
   min-height: 350px;
+  height: 100%;
   background-color: var(--global-white);
   display: flex;
   flex-direction: column;

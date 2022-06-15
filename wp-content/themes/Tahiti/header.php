@@ -29,11 +29,5 @@
           );
           
           ?>
-        <!-- <ul class="gn-list">
-          <li class="gn-item"><a href="#" class="gn-link">Discover</a></li>
-          <li class="gn-item"><a href="#" class="gn-link">Experience</a></li>
-          <li class="gn-item"><a href="#" class="gn-link">Travel Guides</a></li>
-          <li class="gn-item"><a href="#" class="gn-link">About</a></li>
-        </ul> -->
       </nav>
     </header>
