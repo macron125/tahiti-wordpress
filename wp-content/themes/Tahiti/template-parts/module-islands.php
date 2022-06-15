@@ -10,16 +10,21 @@
         while($query->have_posts()) {
           $query->the_post();
 
+          $title = $post->post_title;
+          $image = get_field('image');
+          $excerpt = get_field('excerpt');
+          $price = get_field('price');
+
           echo 
           '
           <li class="spot-card">
-            <figure class="spot-img" style="background-image: url(' . get_field('image') . ')"></figure>
-            <h3 class="spot-title title">' . $post->post_title . '</h3>
-            <p class="spot-copy">'. get_field('excerpt') .'</p>
+            <figure class="spot-img" style="background-image: url(' . $image . ')"></figure>
+            <h3 class="spot-title title">' . $title. '</h3>
+            <p class="spot-copy">'. $excerpt .'</p>
             <a href="#" target="_blank" class="spot-btn btn">
               <div class="spot-price">
                 <span>FROM</span>
-                <span>$'. get_field('price') .'</span>
+                <span>$'. $price .'</span>
               </div>
               <div class="arr-right">
               <svg xmlns="http://www.w3.org/2000/svg" width="20.031" height="20" viewBox="0 0 20.031 20">

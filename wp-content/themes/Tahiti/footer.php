@@ -22,7 +22,7 @@
       </nav>
       <div class="copyright" style="text-align: center; margin: 30px 0;">© Copyright 2022</div>
     </footer>
-    <div class="developedBy" id="developedBy" style="width:100%;text-align:center;font-family:helvetica;font-size:10px;background-color:#0E0E10;color:#fff;padding:10px 0;">Developed by <a href="https://georgeparesishvili.com/" style="color:#fff"><b>George&nbsp;Paresishvili</b></a></div>
+    <div class="developedBy" id="developedBy" style="width:100%;text-align:center;font-family:helvetica;font-size:10px;background-color:#0E0E10;color:#fff;padding:10px 0;">Developed by <a href="https://georgeparesishvili.com/" style="color:#fff"><b style="font-family:'helvetica';">George&nbsp;Paresishvili</b></a></div>
     <?php wp_footer(); ?>
   </body>
 </html>
